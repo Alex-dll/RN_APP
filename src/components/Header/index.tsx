@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   SubTitle: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 20,
   },
 });
 

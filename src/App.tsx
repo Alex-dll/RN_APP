@@ -1,11 +1,19 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { Button, SafeAreaView, StyleSheet } from 'react-native';
 import Header from './components/Header';
 
 const App: React.FC = () => {
+  const [name, setName] = useState<string>('Alex');
+  const [title] = useState<string>('Ola');
+
+  const handlePressButton = () => {
+    setName(prevState => (prevState === 'Alex' ? 'Amoreco' : 'Alex'));
+  };
+
   return (
     <SafeAreaView style={styles.App}>
-      <Header title="Bem-Vindo ao RN" name="Alex" />
+      <Header title={title} name={name} />
+      <Button title="Change name" onPress={handlePressButton} />
     </SafeAreaView>
   );
 };
