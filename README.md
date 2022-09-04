@@ -1,3 +1,10 @@
+<p align="center">
+  <img
+    width="400"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" 
+    alt="React Native logo" />
+</p>
+
 <h1 align="center">
  RN APP
 </h1>
@@ -5,6 +12,10 @@
 <h2 align="center">
  This project is to learn react-native Framework
 </h2>
+
+
+
+
 
 [React Native](https://reactnative.dev/)
   - Version ~> "0.69.5"
