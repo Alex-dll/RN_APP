@@ -4,10 +4,10 @@ import Header from './components/Header';
 
 const App: React.FC = () => {
   const [name, setName] = useState<string>('Alex');
-  const [title] = useState<string>('Ola');
+  const [title] = useState<string>('Bem-Vindo');
 
   const handlePressButton = useCallback(() => {
-    setName(prevState => (prevState === 'Alex' ? 'Amoreco' : 'Alex'));
+    setName(prevState => (prevState === 'Alex' ? 'Sandro' : 'Alex'));
   }, []);
 
   return (

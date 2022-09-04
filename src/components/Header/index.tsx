@@ -18,11 +18,11 @@ const Header: React.FC<HeaderProps> = ({ name, title }: HeaderProps) => {
 const styles = StyleSheet.create({
   Title: {
     color: 'black',
-    fontSize: 30,
+    fontSize: 20,
   },
   SubTitle: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 30,
   },
 });
 
