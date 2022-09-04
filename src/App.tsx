@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Button, SafeAreaView, StyleSheet } from 'react-native';
 import Header from './components/Header';
 
@@ -6,9 +6,9 @@ const App: React.FC = () => {
   const [name, setName] = useState<string>('Alex');
   const [title] = useState<string>('Ola');
 
-  const handlePressButton = () => {
+  const handlePressButton = useCallback(() => {
     setName(prevState => (prevState === 'Alex' ? 'Amoreco' : 'Alex'));
-  };
+  }, []);
 
   return (
     <SafeAreaView style={styles.App}>
