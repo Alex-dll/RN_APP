@@ -1,12 +1,11 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
-
-// import { Container } from './styles';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import Header from './components/Header';
 
 const src: React.FC = () => {
   return (
     <SafeAreaView style={styles.App}>
-      <Text style={styles.Title}>Wellcome to schina Academy</Text>
+      <Header />
     </SafeAreaView>
   );
 };
@@ -14,12 +13,7 @@ const src: React.FC = () => {
 const styles = StyleSheet.create({
   App: {
     flex: 1,
-    backgroundColor: 'black',
-    justifyContent: 'center',
-  },
-  Title: {
-    color: 'white',
-    fontSize: 30,
+    margin: 20,
   },
 });
 
