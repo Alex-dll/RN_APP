@@ -2,10 +2,10 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import Header from './components/Header';
 
-const src: React.FC = () => {
+const App: React.FC = () => {
   return (
     <SafeAreaView style={styles.App}>
-      <Header />
+      <Header title="Bem-Vindo ao RN" name="Alex" />
     </SafeAreaView>
   );
 };
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default src;
+export default App;
