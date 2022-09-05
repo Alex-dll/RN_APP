@@ -1,14 +1,20 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+import Button from './components/Button';
 import Header from './components/Header';
 
-// import { Container } from './styles';
+import useAppearance from './hooks/useAppearance';
 
-const src: React.FC = () => {
+const App: React.FC = () => {
+  const { theme } = useAppearance();
   return (
-    <SafeAreaView style={styles.App}>
-      <Header />
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView style={styles.App}>
+        <Header />
+        <Button onPress={() => {}} />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 };
 
@@ -19,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default src;
+export default App;
