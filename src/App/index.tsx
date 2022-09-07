@@ -1,8 +1,7 @@
 import React from 'react';
+import { View } from 'react-native';
 import { ThemeProvider } from 'styled-components';
-import Button from '../components/Button';
-import Header from '../components/Header';
-import Text from '../components/Text';
+import Icon from '../components/Icon';
 
 import useAppearance from '../hooks/useAppearance';
 import { Container } from './styles';
@@ -12,11 +11,10 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Header />
-        <Button onPress={() => {}} />
-        <Text typography="h4" color="primary">
-          Teste
-        </Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <Icon icon="ghost" size={150} />
+          <Icon icon="catrina" size={150} />
+        </View>
       </Container>
     </ThemeProvider>
   );
