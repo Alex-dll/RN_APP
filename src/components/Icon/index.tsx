@@ -14,12 +14,14 @@ const Icon: React.FC<Omit<IconProps, 'source'>> = ({
 }: Omit<IconProps, 'source'>) => {
   const { colors } = useContext(ThemeContext);
 
+  console.log(colors);
+
   if (activeColor) {
     return (
       <IconContainer
         size={size}
         source={Icons[icon]}
-        style={[{ tintColor: colors[activeColor].main }, style]}
+        style={[{ tintColor: activeColor }, style]}
       />
     );
   }

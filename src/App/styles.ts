@@ -4,5 +4,5 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background.main};
   margin: 20px;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
