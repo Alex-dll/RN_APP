@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useRef } from 'react';
 import { Alert, View } from 'react-native';
 import { ThemeProvider } from 'styled-components';
@@ -24,35 +25,37 @@ const App: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          <Icon icon="ghost" size={150} />
-          <Separator width={30} />
-          <Icon icon="catrina" size={150} />
-        </View>
-        <View>
-          <Input
-            ref={refEmail}
-            placeholder="jonhdoe@mail.com"
-            label="E-Mail"
-            icon="knight"
-            iconPosition="right"
-          />
-          <Separator height={10} />
-          <Input
-            ref={refPassword}
-            placeholder="sua senha"
-            secureTextEntry
-            label="password"
-          />
-        </View>
-        <Button color="surface" mode="outline" onPress={handlePress}>
-          Login
-        </Button>
-        <Separator />
-      </Container>
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <Icon icon="ghost" size={150} />
+            <Separator width={30} />
+            <Icon icon="catrina" size={150} />
+          </View>
+          <View>
+            <Input
+              ref={refEmail}
+              placeholder="jonhdoe@mail.com"
+              label="E-Mail"
+              icon="knight"
+              iconPosition="right"
+            />
+            <Separator height={10} />
+            <Input
+              ref={refPassword}
+              placeholder="sua senha"
+              secureTextEntry
+              label="password"
+            />
+          </View>
+          <Button color="surface" mode="outline" onPress={handlePress}>
+            Login
+          </Button>
+          <Separator />
+        </Container>
+      </ThemeProvider>
+    </NavigationContainer>
   );
 };
 
