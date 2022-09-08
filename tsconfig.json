@@ -6,6 +6,11 @@
 
     /* Completeness */
     "skipLibCheck": true,
-    "types": ["react-native", "jest", "styled-components-react-native"]
+    "types": ["react-native", "jest", "styled-components-react-native"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "rootDirs": ["src"]
   }
 }
