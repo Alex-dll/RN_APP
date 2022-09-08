@@ -17,7 +17,7 @@ export const ContainerButton = styled.TouchableOpacity<IContainerButton>`
   }};
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.borders.radius.sm}px;
   flex-direction: row;
   border-color: ${({ borderColor }) => borderColor || 'transparent'};
   border-width: 1px;
@@ -35,5 +35,5 @@ export const Title = styled.Text<ITitle>`
 `;
 
 export const Loading = styled.ActivityIndicator`
-  margin-left: 10px;
+  margin-left: ${({ theme }) => theme.spacing.sm}px;
 `;
