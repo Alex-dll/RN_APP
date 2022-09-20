@@ -1,4 +1,5 @@
-import React from 'react';
+import { NavigationAction } from '@react-navigation/native';
+import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import Button from '~/components/Button';
 import Icon from '~/components/Icon';
@@ -7,7 +8,10 @@ import Separator from '~/components/Separator';
 
 import { Container } from './styles';
 
-const Profile: React.FC = () => {
+const Profile = ({ navigation }: ProfileProps) => {
+  const handleNavigation = () => navigation.push('profile');
+  const handleToTop = () => navigation.popToTop();
+
   return (
     <Container>
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
@@ -25,8 +29,11 @@ const Profile: React.FC = () => {
         <Separator height={10} />
         <Input placeholder="sua senha" secureTextEntry label="password" />
       </View>
-      <Button color="surface" mode="outline" onPress={() => {}}>
+      <Button color="surface" mode="outline" onPress={handleNavigation}>
         Login
+      </Button>
+      <Button color="surface" mode="outline" onPress={handleToTop}>
+        Pop to Top
       </Button>
       <Separator />
     </Container>
