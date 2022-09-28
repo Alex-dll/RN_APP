@@ -1,41 +1,33 @@
-import { NavigationAction } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { View } from 'react-native';
-import Button from '~/components/Button';
-import Icon from '~/components/Icon';
-import Input from '~/components/Input';
-import Separator from '~/components/Separator';
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 
 import { Container } from './styles';
 
-const Profile = ({ navigation }: ProfileProps) => {
+const Profile = ({ navigation, route }) => {
+  const { userName } = route.params;
+
   const handleNavigation = () => navigation.push('profile');
-  const handleToTop = () => navigation.popToTop();
+  const handleUpdate = () =>
+    navigation.setParams({
+      userName: 'alex.dlli',
+    });
+  const handleNavigateToHome = () =>
+    navigation.navigate('home', {
+      selectedUser: userName,
+    });
 
   return (
     <Container>
-      <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-        <Icon icon="ghost" size={150} />
-        <Separator width={30} />
-        <Icon icon="catrina" size={150} />
-      </View>
-      <View>
-        <Input
-          placeholder="jonhdoe@mail.com"
-          label="E-Mail"
-          icon="knight"
-          iconPosition="right"
-        />
-        <Separator height={10} />
-        <Input placeholder="sua senha" secureTextEntry label="password" />
-      </View>
-      <Button color="surface" mode="outline" onPress={handleNavigation}>
-        Login
-      </Button>
-      <Button color="surface" mode="outline" onPress={handleToTop}>
-        Pop to Top
-      </Button>
-      <Separator />
+      <TouchableOpacity onPress={handleNavigation}>
+        <Text>Profile: {userName}</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={handleUpdate}>
+        <Text>Update params</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleNavigateToHome}>
+        <Text>Navigate to Home with Params</Text>
+      </TouchableOpacity>
     </Container>
   );
 };
