@@ -12,6 +12,7 @@
     "preios": "npx react-native-asset"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.9.0",
     "react": "18.0.0",
