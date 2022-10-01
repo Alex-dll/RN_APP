@@ -1,10 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
 import { Container } from './styles';
 
-const Profile = ({ navigation }) => {
-  const handleNavigation = () => navigation.push('post');
+const Profile = () => {
+  const navigation = useNavigation();
+
+  const handleNavigation = () => navigation.navigate('post');
 
   return (
     <Container>
