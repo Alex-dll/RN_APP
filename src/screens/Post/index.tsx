@@ -1,4 +1,4 @@
-import { useIsFocused, useNavigationState } from '@react-navigation/native';
+import { useIsFocused } from '@react-navigation/native';
 import React from 'react';
 import { View } from 'react-native';
 

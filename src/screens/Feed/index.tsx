@@ -5,10 +5,15 @@ import { Button, View } from 'react-native';
 // import { Container } from './styles';
 
 const Feed: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StartBottomTabNavigationProp>();
 
   const handlePress = () => {
-    navigation.navigate('stories', { para: 'story' });
+    navigation.navigate('home', {
+      screen: 'stories',
+      params: {
+        profile: 'Alex',
+      },
+    });
   };
 
   const handlePressToPost = () => {

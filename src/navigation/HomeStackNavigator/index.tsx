@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Feed from '~/screens/Feed';
 import Stories from '~/screens/Stories';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<HomeStackParamsList>();
 
 const HomeStackNavigator = () => {
   return (
