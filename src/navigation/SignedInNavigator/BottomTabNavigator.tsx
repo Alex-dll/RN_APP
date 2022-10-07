@@ -4,7 +4,7 @@ import Icon from '~/components/Icon';
 import Home from '~/screens/SingedIn/Home';
 import Profile from '~/screens/SingedIn/Profile';
 
-const BottomTab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator<BottomTabsParamList>();
 
 const BottomTabNavigator = () => {
   return (
