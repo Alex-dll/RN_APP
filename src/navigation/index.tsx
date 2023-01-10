@@ -5,9 +5,9 @@ import BottomTabNavigator from './SignedInNavigator/BottomTabNavigator';
 import SignInNavigator from './SignInNavigator';
 
 const Routes: React.FC = () => {
-  const { isLoggedIn } = useAuth();
+  const { isSignedIn } = useAuth();
 
-  return isLoggedIn ? <BottomTabNavigator /> : <SignInNavigator />;
+  return isSignedIn ? <BottomTabNavigator /> : <SignInNavigator />;
 };
 
 export default Routes;
