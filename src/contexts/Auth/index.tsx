@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import React, { createContext, ReactNode, useEffect, useState } from 'react';
 import type { UserDTO } from '~/@types/dtos/user';
+import { auth } from '~/services/resource/auth';
 import { asyncUserKeys, AuthContextProps } from './types';
 
 type Props = {
@@ -23,21 +24,15 @@ export const AuthProvider = ({ children }: Props) => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [RehydrateLoading, setRehydrateLoading] = useState(false);
 
-  const signIn = async ({ email, password }: signInProps) => {
+  const signIn = async (data: signInProps) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:8080/api/auth', {
-        email,
-        password,
-      });
-      console.log(response.data.user);
-      setUser(response.data.user);
+      const response = await auth.signInResource(data);
+      console.log(response.user);
+      setUser(response.user);
       setIsSignedIn(true);
       //api.default.headers.Authorization = `Bearer ${response.data.token}`;
-      AsyncStorage.setItem(
-        asyncUserKeys.user,
-        JSON.stringify(response.data.user),
-      );
+      AsyncStorage.setItem(asyncUserKeys.user, JSON.stringify(response.user));
     } catch (error) {
     } finally {
       setLoading(false);
