@@ -6,7 +6,19 @@ createServer({
   models: {
     user: Model,
   },
+  seeds(server) {
+    server.create('user', {
+      firstName: 'Alex',
+      lastName: 'Sandro',
+      email: 'alex.sandro@gmail.com',
+      password: 'secret',
+    });
+  },
   routes() {
+    this.get('/user', (schema, request) => {
+      return schema.users.all();
+    });
+
     this.post('/auth', (schema, request) => {
       const body = JSON.parse(request.requestBody);
       const user = schema.users.findBy({
@@ -20,6 +32,7 @@ createServer({
 
       return user;
     });
+
     this.post('/user', (schema, request) => {
       const body = JSON.parse(request.requestBody);
       const user = schema.users.create(body);

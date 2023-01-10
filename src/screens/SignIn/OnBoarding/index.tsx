@@ -11,7 +11,9 @@ const OnBoarding: React.FC = () => {
   return (
     <SafeAreaView>
       <Button
-        onPress={() => signIn({ email: '123', password: '123' })}
+        onPress={() =>
+          signIn({ email: 'alex.sandro@gmail.com', password: 'secret' })
+        }
         loading={loading}>
         Sign in
       </Button>
