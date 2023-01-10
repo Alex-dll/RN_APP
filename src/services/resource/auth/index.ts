@@ -1,7 +1,7 @@
 import api from '~/services/api';
 import { RequestSignInData, ResponseSignInData } from './types';
 
-export const auth = {
+export const authService = {
   signInResource: async ({
     email,
     password,

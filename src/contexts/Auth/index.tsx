@@ -1,8 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
 import React, { createContext, ReactNode, useEffect, useState } from 'react';
 import type { UserDTO } from '~/@types/dtos/user';
-import { auth } from '~/services/resource/auth';
+import { authService } from '~/services/resource/auth';
 import { asyncUserKeys, AuthContextProps } from './types';
 
 type Props = {
@@ -27,7 +26,7 @@ export const AuthProvider = ({ children }: Props) => {
   const signIn = async (data: signInProps) => {
     try {
       setLoading(true);
-      const response = await auth.signInResource(data);
+      const response = await authService.signInResource(data);
       console.log(response.user);
       setUser(response.user);
       setIsSignedIn(true);
