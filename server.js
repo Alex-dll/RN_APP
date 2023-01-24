@@ -15,7 +15,7 @@ createServer({
     });
   },
   routes() {
-    this.get('/user', (schema, request) => {
+    this.get('/user', schema => {
       return schema.users.all();
     });
 

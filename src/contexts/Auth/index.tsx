@@ -21,13 +21,12 @@ export const AuthProvider = ({ children }: Props) => {
   const [user, setUser] = useState<UserDTO>();
   const [loading, setLoading] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [RehydrateLoading, setRehydrateLoading] = useState(false);
+  const [rehydrateLoading, setRehydrateLoading] = useState(false);
 
   const signIn = async (data: signInProps) => {
     try {
       setLoading(true);
       const response = await authService.signInResource(data);
-      console.log(response.user);
       setUser(response.user);
       setIsSignedIn(true);
       //api.default.headers.Authorization = `Bearer ${response.data.token}`;
@@ -62,7 +61,7 @@ export const AuthProvider = ({ children }: Props) => {
   return (
     <AuthContext.Provider
       value={{ user, loading, isSignedIn, signIn, signOut }}>
-      {!RehydrateLoading && children}
+      {!rehydrateLoading && children}
     </AuthContext.Provider>
   );
 };
