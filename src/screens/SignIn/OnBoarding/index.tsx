@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useWindowDimensions } from 'react-native';
+import { LayoutChangeEvent, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from 'styled-components/native';
 import Button from '~/components/Button';
@@ -36,7 +36,9 @@ const OnBoarding: React.FC = () => {
       <Person size={heightPerson} icon="doctor" />
 
       <ContainerColumn
-        onLayout={e => handleHeightToPerson(e.nativeEvent.layout.height)}>
+        onLayout={(e: LayoutChangeEvent) =>
+          handleHeightToPerson(e.nativeEvent.layout.height)
+        }>
         <Separator height={spacing.md} />
 
         <Text typography="h4">
