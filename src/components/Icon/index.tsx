@@ -17,10 +17,18 @@ const Icon: React.FC<Omit<IconProps, 'source'>> = ({
         size={size}
         source={Icons[icon]}
         style={[{ tintColor: activeColor }, style]}
+        resizeMode="contain"
       />
     );
   }
-  return <IconContainer size={size} source={Icons[icon]} />;
+  return (
+    <IconContainer
+      size={size}
+      source={Icons[icon]}
+      style={style}
+      resizeMode="contain"
+    />
+  );
 };
 
 export default Icon;

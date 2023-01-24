@@ -4,12 +4,15 @@ import knight from '../assets/images/knight.png';
 import eyeOpen from '../assets/images/eye-open.png';
 import eyeClose from '../assets/images/eye-close.png';
 
+import doctor from '../assets/icons/doctor/Vector.png';
+
 export type NameIconsTypes =
   | 'catrina'
   | 'ghost'
   | 'knight'
   | 'eyeOpen'
-  | 'eyeClose';
+  | 'eyeClose'
+  | 'doctor';
 
 export default {
   catrina,
@@ -17,4 +20,5 @@ export default {
   knight,
   eyeOpen,
   eyeClose,
+  doctor,
 };

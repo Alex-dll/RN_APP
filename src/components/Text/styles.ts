@@ -8,7 +8,7 @@ export const TextContainer = styled.Text<TextContainerProps>`
     return theme.colors[color].main;
   }};
   font-size: ${({ theme, typography }) => {
-    return theme.typography[typography].fontSize;
+    return `${theme.typography[typography].fontSize}px`;
   }};
   font-family: ${({ theme, typography }) => {
     return theme.typography[typography].fontFamily;

@@ -6,7 +6,7 @@ import { ContainerButton, Title, Loading } from './styles';
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  color = 'error',
+  color = 'primary',
   mode = 'contained',
   loading = false,
   onPress,
