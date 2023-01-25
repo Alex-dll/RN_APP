@@ -2,7 +2,7 @@ import React, { useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { ButtonProps } from './types';
 
-import { ContainerButton, Title, Loading } from './styles';
+import { ContainerButton, Title, Loading, AbsoluteIcon } from './styles';
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -10,6 +10,8 @@ const Button: React.FC<ButtonProps> = ({
   mode = 'contained',
   loading = false,
   onPress,
+  typography = 'body2',
+  icon,
   ...rest
 }: ButtonProps) => {
   const { colors } = useContext(ThemeContext);
@@ -25,7 +27,10 @@ const Button: React.FC<ButtonProps> = ({
       mode={mode}
       onPress={onPress}
       {...rest}>
-      <Title color={colorByMode}>{children}</Title>
+      {!!AbsoluteIcon && <AbsoluteIcon>{icon}</AbsoluteIcon>}
+      <Title typography={typography} color={colorByMode}>
+        {children}
+      </Title>
       {loading && <Loading size={15} color={colorByMode} />}
     </ContainerButton>
   );

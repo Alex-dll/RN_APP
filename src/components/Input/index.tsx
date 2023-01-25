@@ -23,7 +23,7 @@ import Icon from '../Icon';
 
 const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = (
   {
-    color = 'surface',
+    color = 'surface500',
     secureTextEntry,
     icon,
     iconColor,
@@ -99,7 +99,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = (
   return (
     <InputContainer>
       {!!label && (
-        <Label color="surface" typography="body3">
+        <Label color="surface600" typography="body3">
           {label}
         </Label>
       )}
